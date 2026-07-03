@@ -1,0 +1,24 @@
+{
+  "modules": {
+    "discord": {
+      "description": "Discord Platform Module: bridges Discord to the ProperOS AI router and event bus",
+      "latest": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "url": "https://github.com/Proper-OS/module-discord/releases/download/v0.1.0/discord-0.1.0.tgz",
+          "dependencies": []
+        }
+      }
+    },
+    "discord-slash-commands": {
+      "description": "Slash commands for the ProperOS Discord module: /ping and /ask",
+      "latest": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "url": "https://github.com/Proper-OS/plugin-discord-slash-commands/releases/download/v0.1.0/discord-slash-commands-0.1.0.tgz",
+          "dependencies": ["discord"]
+        }
+      }
+    }
+  }
+}
