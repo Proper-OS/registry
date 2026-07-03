@@ -12,6 +12,7 @@
     },
     "discord-slash-commands": {
       "description": "Slash commands for the ProperOS Discord module: /ping and /ask",
+      "host": "discord",
       "latest": "0.1.0",
       "versions": {
         "0.1.0": {

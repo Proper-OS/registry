@@ -30,9 +30,23 @@ https://raw.githubusercontent.com/Proper-OS/registry/main/index.json
 ```
 
 `dependencies` are bare module names, resolved to their `latest`. For a
-**plugin**, list its host module here so installing the plugin pulls the
-host in too (at runtime the `host` field in `proper.json` is what makes it
-a plugin).
+**plugin**, set `"host": "<module>"` on the entry (so tooling can gate the
+install on the host being present) **and** list the host in `dependencies`
+(so installing the plugin pulls it in). At runtime the `host` field in
+`proper.json` is what makes it a plugin.
 
-Point a workspace at a different registry with
+## Third-party and trusted registries
+
+Anyone can host a registry (any URL serving an `index.json` in this format)
+and users add them with `proper registry add <url>`. Results from those
+registries show as **Third-party** unless the URL is listed in this repo's
+[`trusted.json`](trusted.json) — the **Trusted** tag is granted by the
+ProperOS project, never self-declared. To request it, open a pull request
+adding your registry's URL to `trusted.json` with a short description of
+who runs it and what it serves.
+
+The official registry is always queried first, so a third-party registry can
+never shadow a module name published here.
+
+Point a workspace at a different primary registry with
 `proper config set registry.url <url>`.
